@@ -1,0 +1,41 @@
+<!--
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ *
+ */-->
+<import src="../../templates/new_commentsList.wxml" />
+<import src="../../templates/copyright.wxml" />
+
+
+
+<view class="topic-common-list">
+  <view class="topic-list-item">
+    <image src="../../images/src/comments_bg.jpg" class="cover" mode="aspectFill"></image>
+    <view>点击可跳转至相关文章查看</view>
+  </view>
+</view>
+
+
+<view class="showerror" style="display:{{showerror}}">
+  <image src="../../images/src/fail_nowifi.png" style="height:100rpx;width:100rpx"></image>
+  <view class="errortext">
+    暂时无法访问网络
+    <view class="">
+      <button class="more-button" onTap="reload" size="mini" onTap="reload">重新加载</button>
+    </view>
+  </view>
+</view>
+
+<template is="commentsList" data="{{commentsList}}" />
+
+
+<view class="copyright">
+  <template is="tempCopyright" />
+</view>

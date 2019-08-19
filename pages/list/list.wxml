@@ -1,0 +1,61 @@
+<!--
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ *
+ */-->
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+
+<scroll-view style="height:100%;" scroll-y="true" lower-threshold="100rpx">
+
+  <view class="topic-common-list" style="display:{{isCategoryPage}}">
+    <view class="topic-list-item">
+      <image src="{{categoriesImage}}" class="cover" mode="aspectFill">
+      </image>
+      <view class='topic-item-content'>
+        <view class="topic-content-brief">
+          <text>{{categoriesList.description}}</text>
+        </view>
+        <view class="topic-content-num">
+          <text>共有 {{categoriesList.count}} 篇文章</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="search_box" style="display:{{isSearchPage}}">
+    <text>﹌ {{searchKey}} ﹌</text>
+    <text>所有相关文章，本搜索为全文搜索</text>
+  </view>
+
+
+  <view class="showerror" style="display:{{showerror}}">
+    <image src="../../images/src/fail_nowifi.png" style="height:100rpx;width:100rpx"></image>
+
+    <view class="errortext">
+      暂时无法访问网络
+      <view class="">
+        <button class="more-button" bindtap="reload" size="mini" bindtap="reload">重新加载</button>
+      </view>
+    </view>
+  </view>
+
+  <view style="display:{{showallDisplay}}">
+    <template is="tempCommonList" data="{{postsList}}" />
+    <view class="loadingmore" style="display:{{floatDisplay}}">
+      <view class="no-more" hidden="{{!isLastPage}}">- 木有啦 -</view>
+    </view>
+  </view>
+
+  <view class="copyright" style="display:{{floatDisplay}}">
+    <template is="tempCopyright" />
+  </view>
+
+</scroll-view>

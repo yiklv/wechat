@@ -1,0 +1,125 @@
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ * 
+ */
+@import "../../wxParse/wxParse.wxss";
+
+.wrapper {
+  padding: 5rpx;
+}
+
+.excerpt {
+  color: #626262;
+  font-size: 32rpx;
+  line-height: 64rpx;
+  text-align: left;
+}
+
+.h2 {
+  clear: both;
+  border-width: 1px 0;
+  color: #666;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  font-weight: bold;
+}
+
+.clearfix {
+  margin: 5px 15px;
+  display: inline-block;
+}
+
+.wxParse-a {
+  color: #21759b;
+}
+
+.wxParse-p {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+.wxParse-p image {
+  margin: 0 auto;
+  width: 100% !important;
+  /* box-shadow: 2rpx 4rpx 16rpx #666; */
+}
+
+.praisePost {
+  position: relative;
+  text-align: left;
+  margin-bottom: 30rpx;
+}
+
+.praiseTitle {
+  text-align: center;
+  font-weight: normal;
+  line-height: 40rpx;
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
+  /* margin-left: 280rpx; */
+  font-size: 28rpx;
+  color: #959595 !important;
+  vertical-align: middle;
+  /* width:500rpx; */
+  height: 70rpx;
+  border-radius: 30rpx;
+  /* border: 1rpx solid #21759b; */
+}
+
+.praiseText {
+  text-align: center;
+  margin-left: -12rpx;
+}
+
+.img-like {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  text-align: center;
+  margin-right: 20rpx;
+  margin-top: 8rpx;
+}
+
+.gravatarLikeImg {
+  margin-top: 12rpx;
+  border-radius: 16rpx;
+  height: 64rpx;
+  width: 64rpx;
+  margin-left: 24rpx;
+}
+
+.praise-button {
+  width: 320rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 72rpx !important;
+  background-color: #fe7373;
+  margin-top: 32rpx;
+}
+
+.praise-button::after {
+  border: none;
+}
+
+.gotowebpage-button {
+  width: 320rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 72rpx !important;
+  background-color: #fd8f45;
+}
+
+.gotowebpage-button::after {
+  border: none;
+}

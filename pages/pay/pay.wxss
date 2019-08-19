@@ -1,0 +1,90 @@
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ * 
+ */
+
+.container {
+  width: 100%;
+  margin-bottom: 10rpx;
+  padding: 0 0rpx;
+}
+
+.title {
+  color: #333;
+  font-size: 32rpx;
+  text-align: center;
+  margin: 48rpx;
+}
+
+.price-list-box {
+  margin: 0 auto;
+  width: 680rpx;
+  height: 300rpx;
+}
+
+.price-list {
+  /* padding:0 30rpx; */
+  margin-left: -40rpx;
+  text-align: center;
+}
+
+.price-list .item {
+  float: left;
+  margin-left: 40rpx;
+  margin-bottom: 40rpx;
+  width: 200rpx;
+}
+
+.price-list .price-box {
+  height: 100rpx;
+  border-radius: 16rpx;
+  border: 4rpx solid #fd8f45;
+  text-align: center;
+}
+
+.price-list .price-box em {
+  line-height: 100rpx;
+  color: #fd8f45;
+  font-size: 30rpx;
+}
+
+.price-list .price-box .price {
+  font-size: 50rpx;
+  display: inline-block;
+}
+
+.price-list .price-box.active {
+  background-color: #36c;
+}
+
+.price-list .price-box.active em {
+  color: #fff;
+  background-color: #36c;
+}
+
+.cancel-button {
+  width: 200rpx;
+  margin: 0 auto;
+}
+
+.cancel-button>button {
+  width: 200rpx;
+  height: 88rpx;
+  font-size: 28rpx;
+  color: #959595;
+  line-height: 88rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  border: 2px solid #eee;
+  margin-top: 200rpx;
+}
+
+.cancel-button>button::after {
+  border: none;
+}

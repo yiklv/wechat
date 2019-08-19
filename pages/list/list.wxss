@@ -1,0 +1,89 @@
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ */
+
+.list-header {
+  padding: 50rpx 0;
+  text-align: left;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 40rpx;
+  color: #21759b;
+  border-bottom: 2rpx solid #ededed;
+  margin-bottom: 48rpx;
+}
+
+/*topic list*/
+
+.topic-list-item {
+  position: relative;
+  overflow: hidden;
+  background: #f4f6f9;
+}
+
+.topic-list-item  image.cover {
+  display: block;
+  width: 100%;
+  height: 240rpx;
+  filter: brightness(88%);
+}
+
+.topic-item-content {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  vertical-align: middle;
+  width: 90%;
+}
+
+.topic-content-brief {
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 16rpx;
+}
+
+.topic-content-num {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #fff;
+  margin-bottom: 24rpx;
+}
+
+/* 当列表为搜索列表时，顶部的样式 */
+
+.search_box {
+  background: #f4f6f9;
+  text-align: center;
+}
+
+.search_box text:nth-child(1) {
+  font-size: 48rpx;
+  font-weight: 500;
+  display: inline-block;
+  color: #333;
+  padding: 48rpx 0 8rpx;
+}
+
+.search_box text:nth-child(2) {
+  font-size: 30rpx;
+  color: #959595;
+  display: block;
+  padding: 0 0 60rpx;
+}

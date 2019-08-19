@@ -1,0 +1,12 @@
+<!--/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ * 
+ */-->
+<web-view src="{{url}}"></web-view>

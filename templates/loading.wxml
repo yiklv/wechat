@@ -1,0 +1,18 @@
+<!--/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ *
+ */-->
+<template name="tempLoading">
+<view class="sk-three-bounce">
+    <view class="sk-child sk-bounce1"></view>
+    <view class="sk-child sk-bounce2"></view>
+    <view class="sk-child sk-bounce3"></view>
+</view>
+</template>

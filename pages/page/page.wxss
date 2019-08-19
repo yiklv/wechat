@@ -1,0 +1,52 @@
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ */
+@import "../../wxParse/wxParse.wxss";
+
+.wrapper {
+  padding: 5rpx;
+}
+
+.excerpt {
+  color: #626262;
+  font-size: 32rpx;
+  line-height: 64rpx;
+  text-align: left;
+}
+
+.h2 {
+  clear: both;
+  border-width: 1px 0;
+  color: #666;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  font-weight: bold;
+}
+
+.clearfix {
+  margin: 5px 15px;
+  display: inline-block;
+}
+
+.wxParse-a {
+  color: #21759b;
+}
+
+.wxParse-p {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+.wxParse-p image {
+  margin: 0 auto;
+  width: 100% !important;
+  /* box-shadow: 2rpx 4rpx 16rpx #666; */
+}

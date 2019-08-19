@@ -1,0 +1,68 @@
+<!--
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ *
+ */-->
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+<ad unit-id="adunit-0315fcba8d0eda46"></ad>
+
+<view class="top-bar">
+  <block wx:for="{{topBarItems}}" wx:key="id">
+    <view class="top-bar-item {{item.selected ? 'top-bar-item-Selected': '' }}" catchtap="onTapTag" id="{{item.id}}">{{item.name}}</view>
+  </block>
+</view>
+<view class="container">
+  <view class="showerror" style="display:{{showerror}}">
+    <image src="../../images/src/fail_nowifi.png" style="height:100rpx;width:100rpx"></image>
+
+    <view class="errortext">
+      暂时无法访问网络
+      <view class="">
+        <button class="more-button" bindtap="reload" size="mini" bindtap="reload">重新加载</button>
+      </view>
+    </view>
+  </view>
+
+  <view style="display:{{showallDisplay}}">
+    <view class="post-list">
+      <block wx:key="id" wx:for="{{postsList}}">
+        <view class="list-item" index="{{index}}" id="{{item.post_id}}" bindtap="redictDetail">
+
+          <view class='list-content-right'>
+            <view class="list-content-title">
+              <text>{{item.post_title}}</text>
+            </view>
+            <view class="list-content-des">
+              <!-- <image src="../../images/src/calendar.png"></image> -->
+              <!-- <text>{{item.post_date}}</text> -->
+              <!-- <image src="../../images/src/pageviews.png"></image> -->
+              <text class="">浏览 {{item.pageviews}}</text>
+              <!-- <image src="../../images/src/comments.png"></image> -->
+              <text class="">评论 {{item.comment_total}}</text>
+              <!-- <image src="../../images/src/home-like.png"></image> -->
+              <text class="">赞 {{item.like_count}}</text>
+            </view>
+          </view>
+
+          <view class="list-content-cover">
+            <image src="{{item.post_thumbnail_image}}" mode='aspectFill'></image>
+          </view>
+
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+  <view class="copyright" style="display:{{floatDisplay}}">
+    <template is="tempCopyright" />
+  </view>
+</view>

@@ -1,0 +1,155 @@
+/* pages/my/my.wxss */
+page {
+    background: #f5f7f7;
+}
+
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 320rpx;
+  padding: 0 40rpx;
+}
+
+.userinfo-gravatar {
+  width: 148rpx;
+  height: 148rpx;
+}
+
+.userinfo-gravatar image {
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  box-shadow: 4px 12px 30px -8px rgba(139, 161, 185, 0.9);
+}
+
+.userinfo_text_box {
+  color: #333;
+  margin-left: 32rpx;
+}
+
+.userinfo_nickname_box {
+  height: 42rpx;
+  overflow: hidden;
+}
+
+.userinfo_nickname_box text {
+  font-size: 42rpx;
+  font-weight: 600;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.userinfo_des_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.userinfo_des {
+  display: block;
+  color: #959595;
+  font-size: 28rpx;
+  line-height: 1;
+}
+
+.update_btn_box {
+  margin-left: 20rpx;
+}
+
+.usertool {
+  line-height: 42rpx;
+  padding: 0  16rpx;
+  font-size: 24rpx;
+  color: #959595;
+  border-top-left-radius: 24rpx;
+  border-bottom-left-radius: 24rpx;
+  border: 4rpx solid #f5f7f7;
+  border-right-color: transparent;
+  position: absolute;
+  top: 166rpx;
+  right: 0;
+}
+
+.update_btn_box {
+  font-size: 20rpx;
+  color: #fff;
+}
+
+.update-button {
+  line-height: 42rpx;
+  background-color: #fff;
+  padding: 0 16rpx;
+  font-size: 22rpx;
+  color: #959595;
+  border-radius: 24rpx;
+  border: 4rpx solid #f5f7f7;
+}
+
+.update-button::after {
+  border: none;
+}
+
+
+.wmmy {
+    margin-top: 30rpx;
+    background: white;
+    width: 750rpx;
+}
+
+.wmmy1 {
+    width: 690rpx;
+    padding: 20rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wmmy1bt {
+    width: 750rpx;
+    padding: 30rpx 30rpx;
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0rpx 0rpx;
+    color: #959595;
+    font-size: 30rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.wmmy2 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.wmmy2 image {
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+    margin-top: 5rpx;
+}
+
+.wmmy2 view {
+    height: 50rpx;
+    line-height: 50rpx;
+     color: #959595;
+    font-size: 30rpx;
+    margin-left: 30rpx;
+}
+
+.nextimg {
+    width: 30rpx;
+    height: 30rpx;
+    display: block;
+    margin-top: 10rpx;
+}

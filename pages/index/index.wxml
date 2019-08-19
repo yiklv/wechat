@@ -1,0 +1,151 @@
+<!--
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ *
+ */-->
+
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+
+<view class="index-header" style="display:{{displaySwiper}}">
+  <swiper class="index-swiper" indicator-dots="true" interval="10000" autoplay="true" indicator-color="rgba(0, 0, 0, .1)" indicator-active-color="#fd8f45">
+    <block wx:key="id" wx:for="{{postsShowSwiperList}}">
+      <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail">
+        <image mode="aspectFill" src="{{item.post_medium_image}}" style="width:100%" />
+        <!-- <view class="swiper-mask"></view> -->
+        <view class="swiper-desc">
+          <view class='swiper-des-left'>
+            <text>{{item.post_title}}</text>
+            <!-- <view>{{item.pageviews}}人阅读</view> -->
+          </view>
+          <view>立即阅读</view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="showerror" style="display:{{showerror}}">
+  <image src="../../images/src/fail_nowifi.png"></image>
+  <view class="errortext">
+    无法访问网络，请下拉刷新...
+  </view>
+</view>
+
+<view style="display:{{showallDisplay}}">
+
+  <view style="display:{{floatDisplay}}">
+
+    <!-- 图标导航 -->
+    <view class="top-Nav-box">
+
+      <view class='tagsname-title-container'>
+        <view class='tagsname-title'>精选栏目
+        </view>
+
+        <view class='tagsname-title-right'>
+            <view class="tagsname-more">滑动查看</view>
+          
+          </view>
+
+
+      </view>
+      <scroll-view scroll-x>
+        <view class="top-Nav">
+          <block wx:for="{{topNav}}" wx:key="{{id}}">
+            <view wx:if="{{ item.redirecttype == 'webpage' || item.redirecttype == 'apppage'}}">
+              <view class="top-item" catchtap="onNavRedirect" id="{{item.id}}" data-redicttype="{{item.redirecttype}}" data-url="{{item.url}}" data-appid="{{item.appid}}" data-extraData="{{item.extraData}}">
+                <view>
+                  <image mode="aspectFill" src="{{item.image}}"></image>
+                </view>
+                <view>
+                  <text>{{item.name}}</text>
+                </view>
+              </view>
+            </view>
+
+            <view wx:if="{{ item.redirecttype == 'miniapp'}}">
+              <view class="top-item">
+                <navigator path="{{item.url}}" hover-class="none" open-type="navigate" app-id="{{item.appid}}" target="miniProgram">
+                  <view>
+                    <image mode="aspectFill" src="{{item.image}}"></image>
+                  </view>
+                  <text>{{item.name}}</text>
+                </navigator>
+              </view>
+
+            </view>
+
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 图标导航结束 -->
+
+
+    <!-- 图标导航2开始 -->
+    <view class="top-Nav2">
+  <view class="top-item2-container">
+        <navigator url='../comments/comments' hover-class="none">
+          <view class="top-item2">
+            <view class="top-item2-pic">
+              <image src="../../images/src/navbgcomments.jpg" mode="aspectFill"></image>
+            </view>
+            <view class="top-item2-word">
+              <view class="top-item2-title">最新评论</view>
+              <view class="top-item2-brief">评论也很好看哟</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="top-item2-container">
+        <navigator url="../page/page?id=2" hover-class="none">
+          <view class="top-item2">
+            <view class="top-item2-pic">
+              <image src="../../images/src/navbghot.jpg" mode="aspectFill"></image>
+            </view>
+            <view class="top-item2-word">
+              <view class="top-item2-title">常见问题</view>
+              <view class="top-item2-brief">有不懂的看这里</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+
+    
+    </view>
+    <!-- 图标导航2结束 -->
+
+    <!-- 搜索框 -->
+    <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+      <view class="search-pancel">
+        <view>
+          <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit"></input>
+          <button class="search-button" form-type="submit" size="mini" plain="true">
+            <icon type="search" color="#959595" size="16" />
+          </button>
+        </view>
+      </view>
+    </form>
+
+  </view>
+
+  <!-- 加载图文列表 -->
+  <view class="index-container">
+    <template is="tempCommonList" data="{{postsList}}" />
+
+    <view class="loadingmore" style="display:{{floatDisplay}}">
+      <view class="no-more" hidden="{{!isLastPage}}">- 木有啦 -</view>
+    </view>
+    <view class="copyright" style="display:{{floatDisplay}}">
+      <template is="tempCopyright" />
+    </view>
+  </view>
+</view>

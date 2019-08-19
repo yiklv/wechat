@@ -1,0 +1,54 @@
+<!--
+/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ *
+ */-->
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../templates/copyright.wxml" />
+<import src="../../templates/login-popup.wxml" />
+
+<view class="container" style="display:{{display}}">
+
+    <view class="wrapper">
+        <view class="excerpt">
+            <!--  <rich-text nodes="{{pageData.content.rendered}}"></rich-text> -->
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+
+        </view>
+ <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+     
+        <view style='text-align:center'>
+            <button class="gotowebpage-button" formType="submit" size="mini" bindtap="gotowebpage">进入网站</button>
+            <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
+        </view>
+        <view class="praisePost">
+            <view style='text-align:center'>
+                <button class="praise-button" formType="submit" size="mini" bindtap="praise">赞赏鼓励</button>
+
+                <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
+            </view>
+            <view class="praiseTitle">
+                <view style='margin-top: 15rpx;'>
+                    <text>感谢以下赞赏鼓励的朋友们</text>
+                </view>
+            </view>
+            <view class="praiseText">
+                <block wx:key="id" wx:for="{{praiseList}}">
+                    <image src="{{item}}" class="gravatarLikeImg"></image>
+                </block>
+            </view>
+        </view>
+    </view>
+   
+      <view class="copyright">
+        <template is="tempCopyright" />
+    </view>
+
+</view>

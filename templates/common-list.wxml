@@ -1,0 +1,86 @@
+<!-- 文章列表模板 -->
+
+<template name="tempCommonList">
+  <view class="multipleImageArticle-common-list">
+    <block wx:key="id" wx:for="{{postsList}}">
+        <block wx:if="{{index != 0 && index % item.bannerShowIndex ==0}}">
+        <ad unit-id="{{item.bannerId}}"></ad>
+        </block>
+      <!-- 一张大图列表（序号index除以10余数是5时为大图模式）-->
+      <view wx:if="{{index%10==5}}">
+        <view class="list-item1 has-img" index="{{index}}" id="{{item.id}}" data-posttype="{{item.postType}}" bindtap="redictDetail">
+          <view class="content-title">
+            <text>{{item.title.rendered}}</text>
+          </view>
+          <image src="{{item.post_medium_image}}" mode="aspectFill" class="cover"></image>
+          <view class='muit_bottom'>
+            <view>
+              <text>浏览 {{item.pageviews}}</text>
+              <text>评论 {{item.total_comments}}</text>
+              <text>点赞 {{item.like_count}}</text>
+            </view>
+            <view>
+              <text>{{item.post_date}}</text>
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+
+      <view wx:else>
+
+
+        <view class="list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+
+          <!-- 三张图片列表 -->
+          <view wx:if="{{item.post_all_images.length>=3 && (index==2 || (index%10==0 &&index !== 0))}}" class='content-threeImg-box'>
+            <view class="muit-title">
+              <text>{{item.title.rendered}}</text>
+            </view>
+            <view class="image_list">
+              <block wx:for="{{item.post_all_images}}" wx:key="item.id" wx:for-item="image">
+                <view class="image_item" wx:if="{{index<3}}">
+                  <image src="{{image.imagesurl}}" mode="aspectFill"></image>
+                </view>
+              </block>
+            </view>
+            <view class='muit_bottom'>
+              <view>
+                <text>浏览 {{item.pageviews}}</text>
+                <text>评论 {{item.total_comments}}</text>
+                <text>点赞 {{item.like_count}}</text>
+              </view>
+              <view>
+                <text>{{item.post_date}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 单张图片列表 -->
+          <view wx:else class='content-oneImg-box'>
+            <view class="content-article">
+              <view class="content-title">
+                <text>{{item.title.rendered}}</text>
+              </view>
+              <view class="content-bottom">
+                <!-- <view class="content-date">
+                  <text>{{item.post_date}}</text>
+                </view> -->
+                <view class="content-popularity">
+                  <text>浏览 {{item.pageviews}}</text>
+                  <text>评论 {{item.total_comments}}</text>
+                  <text>点赞 {{item.like_count}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="content-cover" wx:if="{{item.post_medium_image != '../../images/src/post_default_img.jpg'}}">
+              <image src="{{item.post_medium_image}}" mode="aspectFill" class="cover"></image>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

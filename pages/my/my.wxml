@@ -1,0 +1,111 @@
+  <!--/*
+ * 
+ * 微慕Plus微信小程序
+ * author: jianbo
+ * organization: 微慕Plus  www.minapper.com
+ 
+ * 技术支持微信号：iamxjb
+ 
+ *Copyright (c) 2019 https://www.minapper.com All rights reserved.
+ * 
+ */-->
+
+
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+<import src="../../templates/login-popup.wxml" />
+  
+   <view class="userinfo">
+  <view class="userinfo-gravatar">
+    <image src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+
+  <block wx:if="{{openid !=''}}">
+    <view class='userinfo_text_box'>
+      <view class='userinfo_nickname_box'>
+        <text>{{userInfo.nickName}}</text>
+      </view>
+      <view class='userinfo_des_box'>
+        <view class="userinfo_des">
+          <text decode="{{true}}">{{userLevel.levelName}}</text>
+        </view>
+        <view class="update_btn_box">
+          <button class="update-button" open-type="getUserInfo" bindgetuserinfo="refresh">
+            <view class="login-inner">更新信息</view>
+          </button>
+        </view>
+      </view>
+  <view class="usertool" bindtap="exit">退出登录</view>
+    </view>
+  </block>
+   <block wx:else>
+    <view class='userinfo_text_box'>
+      <view class='userinfo_nickname_box'>
+        <text>游客</text>
+      </view>
+      <view class='userinfo_des_box'>
+        <view class="userinfo_des">
+          <text decode="{{true}}">未知等级</text>
+        </view>
+        <view class="update_btn_box">
+          <button class="update-button" open-type="getUserInfo" bindgetuserinfo="agreeGetUser">
+            <view class="login-inner">立即登录</view>
+          </button>
+        </view>
+      </view>
+  <view class="usertool" catchtap="exit">清除缓存</view>
+    </view>
+  </block>
+
+</view>
+<view class="wmmy">
+  <view bindtap="redictReadlog"  id="1" class="wmmy1">
+    <view class="wmmy2">
+      <image src="../../images/src/myll.png"></image>
+      <view>我的浏览</view>
+    </view>
+    <image class="nextimg" src="../../images/src/right.png"></image>
+  </view>
+
+  <view bindtap="redictReadlog"  id="2"class="wmmy1">
+    <view class="wmmy2">
+      <image src="../../images/src/mypl.png"></image>
+      <view>我的评论</view>
+    </view>
+    <image class="nextimg" src="../../images/src/right.png"></image>
+  </view>
+
+  <view bindtap="redictReadlog"  id="3" class="wmmy1">
+    <view class="wmmy2">
+      <image src="../../images/src/mydz.png"></image>
+      <view>我的点赞</view>
+    </view>
+    <image class="nextimg" src="../../images/src/right.png"></image>
+  </view>
+
+ <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+
+
+  <view bindtap="redictReadlog"  id="15" class="wmmy1">
+    <view class="wmmy2">
+      <image src="../../images/src/mydy.png"></image>
+      <view>我的订阅</view>
+    </view>
+    <image class="nextimg" src="../../images/src/right.png"></image>
+  </view>
+  <view bindtap="redictReadlog"  id="0" class="wmmy1">
+    <view class="wmmy2">
+      <image src="../../images/src/mygy.png"></image>
+      <view>关于我们</view>
+    </view>
+    <image class="nextimg" src="../../images/src/right.png"></image>
+  </view>
+  <button class="wmmy1bt" openType="contact">
+    <view class="wmmy2">
+      <image src="../../images/src/mykf.png"></image>
+      <view>联系客服</view>
+    </view>
+    <image class="nextimg" src="../../images/src/right.png"></image>
+  </button>
+
+</view>
