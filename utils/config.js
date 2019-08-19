@@ -87,7 +87,7 @@ var BANNERADID = [
     'adunit-0315fcba8d0eda46', 'adunit-47c9506bb07506b2','adunit-c91da6f0c9c0943a'
 ];
 // 小程序广告banner 的显示位置
-var BANNERADINDEX = 3;
+var BANNERADINDEX = 6;
 
 
 // 下面这些设置不用动

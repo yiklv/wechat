@@ -51,7 +51,6 @@ Page({
     else{
 
         key = e.detail.value.input;
-
     }
     if (key != '') {
       url = url + '?search=' +key;
@@ -66,8 +65,6 @@ Page({
         content: '请输入内容',
         showCancel: false,
       });
-
-
     }
   },
   onShareAppMessage: function () {
