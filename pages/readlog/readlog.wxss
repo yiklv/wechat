@@ -180,7 +180,8 @@
 
 .log-text {
   width: 460rpx;
-  font-size: 30rpx;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 1.8;
   color: #333;
   overflow: hidden;
@@ -193,7 +194,7 @@
 .log_tips {
   text-align: center;
   color: #c4c4c4;
-  font-size: 30rpx;
+  font-size: 15px;
   display: block;
   margin: 0 auto;
 }

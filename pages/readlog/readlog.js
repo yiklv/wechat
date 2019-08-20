@@ -37,7 +37,8 @@ Page({
     userInfo: {},
     userLevel: {},
     openid: '',
-    isLoginPopup: false
+    isLoginPopup: false,
+    navigationBarTitle: '',
   },
 
   /**
@@ -77,6 +78,13 @@ Page({
   onReady: function () {
     var self = this;
     Auth.checkSession(self, 'isLoginNow');
+      // 动态设置页面标题
+    wx.setNavigationBarTitle({
+        title: this.data.navigationBarTitle,
+        success: function (res) {
+              // success
+        }
+    })
   },
   agreeGetUser: function (e) {
     let self = this;
@@ -225,7 +233,8 @@ Page({
         readLogs: (wx.getStorageSync('readLogs') || []).map(function (log) {
           count++;
           return log;
-        })
+        }),
+        navigationBarTitle: '我的浏览'
       });
       if (count == 0) {
         self.setData({
@@ -235,9 +244,10 @@ Page({
     }
     else if (tab == '2') {
       self.setData({
-        readLogs: []
+        readLogs: [],
+        navigationBarTitle: '我的评论'
       });
-      
+
       var getMyCommentsPosts = wxRequest.getRequest(Api.getWeixinComment(args));
       getMyCommentsPosts.then(response => {
         if (response.statusCode == 200) {
@@ -267,8 +277,9 @@ Page({
     }
     else if (tab == '3') {
       self.setData({
-        readLogs: []
-      });     
+        readLogs: [],
+        navigationBarTitle: '我的点赞'
+      });
       var getMylikePosts = wxRequest.getRequest(Api.getMyLikeUrl(args));
       getMylikePosts.then(response => {
         if (response.statusCode == 200) {
@@ -334,7 +345,8 @@ Page({
     }
     else if (tab == '5') {
       self.setData({
-        readLogs: []
+        readLogs: [],
+        navigationBarTitle: '我的订阅'
       });
       var url = Api.getSubscription() + '?openid=' + openid;
       var getMysubPost = wxRequest.getRequest(url);

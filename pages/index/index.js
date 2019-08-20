@@ -17,13 +17,16 @@ var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
 import config from '../../utils/config.js'
 var pageCount = config.getPageCount;
+const app = getApp()
+
 // banner广告位list
 var bannerAdId = config.getBANNERADID;
 // banner广告第几位显示
 var bannerShowIndex = config.getBANNERADINDEX;
 
 Page({
-  data: {    
+  data: {  
+    pageTitle: config.getWebsiteName,
     postsList: [],
     postsShowSwiperList:[],
     isLastPage:false,    
@@ -120,6 +123,13 @@ Page({
 
     });
        
+  },
+  onReady: function () {
+    let args = {};
+    wx.setNavigationBarTitle({
+      title: this.data.pageTitle
+    });
+
   },
   onShow: function (options){
       wx.setStorageSync('openLinkCount', 0);

@@ -17,7 +17,7 @@ var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
 
 import config from '../../utils/config.js'
-
+const app = getApp();
 
 Page({
   data: {
@@ -59,7 +59,7 @@ Page({
     })
   },
   onShareAppMessage: function () {
-    var title = "分享“"+ config.getWebsiteName +"”的文章排行。";
+    var title = "分享“"+ config.getWebsiteName +"”的热门文章";
     var path ="pages/hot/hot";
     return {
       title: title,
@@ -106,7 +106,7 @@ Page({
     var self = this;
     this.fetchPostsData("1");
     wx.setNavigationBarTitle({
-      title: '文章排行',
+      title: '热门文章',
       success: function (res) {
         // success
       }

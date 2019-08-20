@@ -4,9 +4,7 @@
  * 微慕Plus微信小程序
  * author: jianbo
  * organization: 微慕Plus  www.minapper.com
- 
  * 技术支持微信号：iamxjb
- 
  *Copyright (c) 2019 https://www.minapper.com All rights reserved.
  *
  */-->
@@ -15,40 +13,41 @@
 <import src="../../templates/login-popup.wxml" />
 
 <view class="container" style="display:{{display}}">
-
-    <view class="wrapper">
-        <view class="excerpt">
-            <!--  <rich-text nodes="{{pageData.content.rendered}}"></rich-text> -->
-            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-
-        </view>
- <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
-     
-        <view style='text-align:center'>
-            <button class="gotowebpage-button" formType="submit" size="mini" bindtap="gotowebpage">进入网站</button>
-            <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
-        </view>
-        <view class="praisePost">
-            <view style='text-align:center'>
-                <button class="praise-button" formType="submit" size="mini" bindtap="praise">赞赏鼓励</button>
-
-                <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
-            </view>
-            <view class="praiseTitle">
-                <view style='margin-top: 15rpx;'>
-                    <text>感谢以下赞赏鼓励的朋友们</text>
-                </view>
-            </view>
-            <view class="praiseText">
-                <block wx:key="id" wx:for="{{praiseList}}">
-                    <image src="{{item}}" class="gravatarLikeImg"></image>
-                </block>
-            </view>
-        </view>
+  <view class="wrapper">
+    <!-- 引入的wp关于页面正文内容 -->
+    <view class="excerpt">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
     </view>
-   
-      <view class="copyright">
-        <template is="tempCopyright" />
+    <!-- 进入网站按钮 -->
+    <view style='text-align:center'>
+      <button class="gotowebpage-button" formType="submit" size="mini" bindtap="gotowebpage">进入网站</button>
+      <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
     </view>
-
+    <!-- 赞赏 -->
+    <view class="praisePost">
+      <!-- 赞赏按钮 -->
+      <view style='text-align:center'>
+        <button class="praise-button" formType="submit" size="mini" bindtap="praise">赞赏鼓励</button>
+        <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
+      </view>
+      <!-- 赞赏人的头像 -->
+      <view class="praiseTitle">
+        <view style='margin-top: 15rpx;'>
+          <text>感谢以下赞赏鼓励的朋友们</text>
+        </view>
+      </view>
+      <view class="praiseText">
+        <block wx:key="id" wx:for="{{praiseList}}">
+          <image src="{{item}}" class="gravatarLikeImg"></image>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- 版权信息 -->
+  <view class="copyright" style="display:{{floatDisplay}}">
+    <template is="tempCopyright" data="{{copyright}}" />
+  </view>
 </view>
+
+<!-- 未登录时弹出的登录框 -->
+<template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>

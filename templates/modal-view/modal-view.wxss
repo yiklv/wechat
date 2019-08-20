@@ -8,23 +8,20 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #000;
-  opacity: 0.5;
+  background: #fff;
+  opacity: 1;
   overflow: hidden;
   z-index: 9000;
-  color: #fff;
 }
 .modal-dialog {
-  width: 600rpx;
-  /*height: 90%;*/
+  width: 640rpx;
   overflow: hidden;
   position: fixed;
   top: 2%;
-  left: 75rpx;
+  left: 55rpx;
   z-index: 9999;
   background: #f9f9f9;
-  /* margin: -200rpx 75rpx; */
-  /* border-radius: 20rpx; */
+  box-shadow: 0 0 16px #eee;
 }
 .modal-title {
   padding-top: 50rpx;
@@ -33,8 +30,7 @@
   text-align: center;
 }
 .modal-content {
-  /* padding: 60rpx 32rpx 40rpx 32rpx;
-  border-radius: 20rpx; */
+  width: 640rpx;
 }
 .modal-input,.modal-input_solo,.modal-input_hd,.modal-input_bd,.modal-input_ft {
   display: flex;
@@ -42,10 +38,7 @@
   font-size: 28rpx;
 }
 .modal-input_solo {
-  /* margin: 0 auto; 
-  border: 2rpx solid #ddd; */
-  width: 600rpx;
-  /* border-radius: 20rpx; */
+  width: 640rpx;
 }
 
 .modal-input_solo image {
@@ -100,9 +93,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* border-top: 1px solid #dedede; */
-  /* margin-top:60rpx; */
-  background-color: #fff;
+  background-color: transparent;
 
 }
 .btn-cancel {

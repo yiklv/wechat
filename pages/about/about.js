@@ -36,9 +36,8 @@ Page({
     userInfo: {},
     isLoginPopup: false,
     openid:"",
-    system:""
-   
-    
+    system:"",
+    copyright: getApp().globalData.copyright
   },
   onLoad: function (options) {
     var self = this;
