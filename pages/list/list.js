@@ -15,9 +15,9 @@ var util = require('../../utils/util.js');
 var WxParse = require('../../wxParse/wxParse.js');
 var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
-
 import config from '../../utils/config.js'
 var pageCount = config.getPageCount;
+const app = getApp();
 
 Page({
   data: {
@@ -39,6 +39,7 @@ Page({
     displaySwiper: "block",
     floatDisplay: "none",
     searchKey:"",
+    copyright: app.globalData.copyright
   },
   formSubmit: function (e) {
     var url = '../list/list'

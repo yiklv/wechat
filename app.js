@@ -8,18 +8,15 @@
  *Copyright (c) 2019 https://www.minapper.com All rights reserved.
  * 
  */
-
+import config from 'utils/config.js';
 
 App({
-    
   onLaunch: function () {
     //调用API从本地缓存中获取数据
+    var that = this
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-    
-
-    
+    wx.setStorageSync('logs', logs) 
   },
   getUserInfo:function(cb){
     var that = this
@@ -40,10 +37,11 @@ App({
     }
   },
   globalData:{
-    userInfo:null,
-    openid:'',
-    isGetUserInfo:false,
-    isGetOpenid:false
-
+    userInfo: null,
+    openid: '',
+    isGetUserInfo: false,
+    isGetOpenid: false,
+    // 定义全局变量：”小程序版权信息“ 
+    copyright: '©  ' + config.getWebsiteName + ' ' + config.getDomain
   }
 })

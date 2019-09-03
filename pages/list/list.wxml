@@ -4,12 +4,11 @@
  * 微慕Plus微信小程序
  * author: jianbo
  * organization: 微慕Plus  www.minapper.com
- 
  * 技术支持微信号：iamxjb
- 
  *Copyright (c) 2019 https://www.minapper.com All rights reserved.
  *
  */-->
+ 
 <import src="../../templates/common-list.wxml" />
 <import src="../../templates/copyright.wxml" />
 
@@ -29,7 +28,7 @@
       </view>
     </view>
   </view>
-
+<ad unit-id="adunit-47c9506bb07506b2"></ad>
   <view class="search_box" style="display:{{isSearchPage}}">
     <text>﹌ {{searchKey}} ﹌</text>
     <text>所有相关文章，本搜索为全文搜索</text>
@@ -55,7 +54,7 @@
   </view>
 
   <view class="copyright" style="display:{{floatDisplay}}">
-    <template is="tempCopyright" />
+    <template is="tempCopyright" data="{{copyright}}" />
   </view>
 
 </scroll-view>

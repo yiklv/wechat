@@ -3,9 +3,7 @@
  * 微慕Plus微信小程序
  * author: jianbo
  * organization: 微慕Plus  www.minapper.com
- 
  * 技术支持微信号：iamxjb
- 
  *Copyright (c) 2019 https://www.minapper.com All rights reserved.
  */
  
@@ -65,12 +63,23 @@ swiper .swiper-desc {
   font-size: 20rpx;
   text-align: center;
 }
-
+/*倒计时*/
+.top-item2-word2 {
+  position: absolute;
+  top: 50%;
+ left: 320rpx;
+  transform: translateY(-50%);
+  text-align: left;
+  margin-left: 32rpx;
+}
+.time-info {
+  padding: 10rpx;
+}
 /*   index   swiper  end  */
 
 /* 搜索框样式 */
 .search-pancel {
-  padding: 40rpx 40rpx;
+  padding: 16rpx 40rpx 40rpx;
   background-color: #fff;
   border-bottom: 16rpx solid #f5f7f7;
 }
@@ -188,7 +197,6 @@ swiper .swiper-desc {
 }
 
 /* 文章排行和最新评论 */
-
 .top-Nav2 {
   display: flex;
   flex-direction: row;
@@ -251,4 +259,39 @@ swiper .swiper-desc {
   -webkit-line-clamp: 1;
   overflow: hidden;
   margin-top: 12rpx;
+}
+
+/* 引导添加到我的小程序 */
+.addMyMiniapp {
+  color: #333;
+  line-height: 1.2;
+  background: #fff;
+  padding: 24rpx 24rpx;
+  border-radius: 12rpx;
+  position: fixed;
+  top: 24rpx;
+  right: 24rpx;
+  z-index: 999;
+  box-shadow: 0 16rpx 30rpx -12rpx rgba(88, 88, 88, 0.2);
+}
+
+.addMyMiniapp>view {
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.addMyMiniapp>text {
+  font-size: 28rpx;
+  font-weight: 200;
+}
+
+.addMyMiniapp::before {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  background: #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 100rpx;
+  top: -10rpx;
 }

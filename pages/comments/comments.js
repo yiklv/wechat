@@ -18,14 +18,15 @@ var wxRequest = require('../../utils/wxRequest.js')
 
 import config from '../../utils/config.js'
 var pageCount = config.getPageCount;
+var app = getApp();
 
 Page({
     data: {
         title: '最新评论列表',
         showerror: "none",
         showallDisplay: "block",
-        commentsList: []
-
+        commentsList: [],
+        copyright: app.globalData.copyright
     },
     onShareAppMessage: function () {
         var title = "分享"+config.getWebsiteName+"的最新评论";

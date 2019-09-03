@@ -4,26 +4,29 @@
  * 微慕Plus微信小程序
  * author: jianbo
  * organization: 微慕Plus  www.minapper.com
- 
  * 技术支持微信号：iamxjb
- 
  *Copyright (c) 2019 https://www.minapper.com All rights reserved.
  *
  */-->
 
 <import src="../../templates/common-list.wxml" />
 <import src="../../templates/copyright.wxml" />
+<!-- 首次进入引导添加到“我的小程序” -->
+<view class="addMyMiniapp" wx:if="{{isFirst}}" catchtap="shutAddMyMiniapp">
+  <view>添加到我的小程序 ↑</view>
+  <text>第一时间了解最新资讯</text>
+</view>
 
+<!-- 轮播图 -->
 <view class="index-header" style="display:{{displaySwiper}}">
   <swiper class="index-swiper" indicator-dots="true" interval="10000" autoplay="true" indicator-color="rgba(0, 0, 0, .1)" indicator-active-color="#fd8f45">
     <block wx:key="id" wx:for="{{postsShowSwiperList}}">
       <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail">
         <image mode="aspectFill" src="{{item.post_medium_image}}" style="width:100%" />
-        <!-- <view class="swiper-mask"></view> -->
+        <!-- 文章标题 -->
         <view class="swiper-desc">
           <view class='swiper-des-left'>
             <text>{{item.post_title}}</text>
-            <!-- <view>{{item.pageviews}}人阅读</view> -->
           </view>
           <view>立即阅读</view>
         </view>
@@ -32,31 +35,38 @@
   </swiper>
 </view>
 
-<view class="showerror" style="display:{{showerror}}">
-  <image src="../../images/src/fail_nowifi.png"></image>
-  <view class="errortext">
-    无法访问网络，请下拉刷新...
+<view style="display:{{showallDisplay}}">
+  <view class="top-item2">
+    <view class="top-item2-pic">
+      <image src="{{wf_bgimg}}" mode="aspectFill"></image>
+    </view>
+    <view class="top-item2-word2">
+      <view class="time-info" wx:if="{{ky_time}}">
+        {{wf_kyname}}
+        <text style="color:red;padding:0rpx 20rpx">{{ky_time}}</text>天
+      </view>
+
+      <view class="time-info" wx:if="{{ky_time}}">
+        {{wf_bmname}}
+        <text style="color:red;padding:0rpx 20rpx">{{bm_time}}</text>天
+      </view>
+    </view>
   </view>
 </view>
 
 <view style="display:{{showallDisplay}}">
-
   <view style="display:{{floatDisplay}}">
-
-    <!-- 图标导航 -->
+    <!-- 精选栏目 -->
     <view class="top-Nav-box">
-
+      <!-- 栏目标题 -->
       <view class='tagsname-title-container'>
         <view class='tagsname-title'>精选栏目
         </view>
-
         <view class='tagsname-title-right'>
-            <view class="tagsname-more">滑动查看</view>
-          
-          </view>
-
-
+          <view class="tagsname-more">滑动查看</view>
+        </view>
       </view>
+      <!-- 滑动列表 -->
       <scroll-view scroll-x>
         <view class="top-Nav">
           <block wx:for="{{topNav}}" wx:key="{{id}}">
@@ -87,12 +97,11 @@
         </view>
       </scroll-view>
     </view>
-    <!-- 图标导航结束 -->
 
-
-    <!-- 图标导航2开始 -->
+    <!-- 最新评论和新手指南 -->
     <view class="top-Nav2">
-  <view class="top-item2-container">
+      <!-- 最新评论 -->
+      <view class="top-item2-container">
         <navigator url='../comments/comments' hover-class="none">
           <view class="top-item2">
             <view class="top-item2-pic">
@@ -105,23 +114,23 @@
           </view>
         </navigator>
       </view>
+      <!-- 新手指南 -->
       <view class="top-item2-container">
-        <navigator url="../page/page?id=2" hover-class="none">
+        <navigator url="../page/page" hover-class="none">
           <view class="top-item2">
             <view class="top-item2-pic">
               <image src="../../images/src/navbghot.jpg" mode="aspectFill"></image>
             </view>
             <view class="top-item2-word">
-              <view class="top-item2-title">常见问题</view>
+              <view class="top-item2-title">新手指南</view>
               <view class="top-item2-brief">有不懂的看这里</view>
             </view>
           </view>
         </navigator>
       </view>
 
-    
+
     </view>
-    <!-- 图标导航2结束 -->
 
     <!-- 搜索框 -->
     <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
@@ -145,7 +154,15 @@
       <view class="no-more" hidden="{{!isLastPage}}">- 木有啦 -</view>
     </view>
     <view class="copyright" style="display:{{floatDisplay}}">
-      <template is="tempCopyright" />
+      <template is="tempCopyright" data="{{copyright}}" />
     </view>
+  </view>
+</view>
+
+<!-- 无法访问网络 -->
+<view class="showerror" style="display:{{showerror}}">
+  <image src="../../images/src/fail_nowifi.png"></image>
+  <view class="errortext">
+    无法访问网络，请下拉刷新...
   </view>
 </view>

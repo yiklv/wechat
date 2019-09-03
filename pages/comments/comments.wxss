@@ -9,24 +9,12 @@
  *Copyright (c) 2019 https://www.minapper.com All rights reserved.
  */
 
- .page {
+.page {
   overflow-x: hidden;
   background-color: #f5f7f7;
 }
 
-.list-header {
- padding: 50rpx 0;
- text-align: left;
- font-weight: normal;
- font-size: 40rpx;
- line-height: 40rpx;
- color: #21759b;
- border-bottom: 2rpx solid #ededed;
- margin-bottom: 48rpx;
-}
-
-/*topic list*/
-
+/* 顶部说明 */
 .topic-list-item {
  position: relative;
  background: #fff;
@@ -49,51 +37,13 @@
  transform: translate(-50%,-50%);
 }
 
-.log-list {
- display: flex;
- flex-direction: column;
-}
-
-.log-items {
- margin-top: 20rpx;
-}
-
-.log-text {
- margin: 32rpx 0;
- font-size: 30rpx;
- color: #757575;
- text-align: left;
- word-wrap: break-word;
- word-break: break-all;
-}
-
-/*  comment   */
-
-.comment-container {
- padding: 32rpx 32rpx 0;
- background-color: #f2f2f2;
-}
-
-.commentheader {
- padding: 20rpx 0;
- text-align: left;
- font-weight: normal;
- font-size: 28rpx;
- line-height: 40rpx;
- color: #959595;
-}
-
+/* 评论 */
 .comment {
  padding: 32rpx;
  margin: 0 40rpx 32rpx;
  background: #fff;
  border-radius: 12rpx;
  box-shadow: 0 16rpx 48rpx -16rpx rgba(100, 100, 100, 0.2);
-}
-
-.comment-children {
- border-top: 1px solid #eee;
- margin-left: 40rpx;
 }
 
 .comment-user {
@@ -122,22 +72,6 @@
 .comment-user-date {
  font-size: 24rpx;
  color: #959595;
-}
-
-.comment-date {
- font-size: 25rpx;
- line-height: 1.2;
- font-weight: normal;
- outline: none;
- margin-bottom: 30rpx;
- color: #959595;
-}
-
-.comment-response {
- color: #333;
- font-size: 30rpx;
- line-height: 1.6;
- margin-bottom: 50rpx;
 }
 
 .comment-summary {
@@ -177,136 +111,6 @@
  margin-top: 12rpx;
 }
 
-.comment-repaly {
- color: #757575;
- font-size: 30rpx;
- line-height: 1.6rem;
- margin-bottom: 10rpx;
-}
-
-.comment-post {
- color: #757575;
- font-size: 30rpx;
- line-height: 1.6rem;
- margin-bottom: 50rpx;
- text-align: center;
- display: flex;
- flex-direction: row;
-}
-
-.comment-reply-title {
- font-size: 40rpx;
- line-height: 1.5;
- color: #21759b;
-}
-
-.comment-fixed {
- position: fixed;
- bottom: 0;
- left: 0;
- right: 0;
- background-color: #fff;
- box-shadow: 0 0 6px rgba(30, 20, 20, 0.1);
- z-index: 100;
-}
-
-.comment-box {
- padding: 24rpx 32rpx;
- display: flex;
- flex-direction: row;
- align-items: center;
- justify-content: space-between;
-}
-
-.comment-box-hidden {
- display: none !important;
-}
-
-.comment-area {
- border: 1px solid #ccc;
- margin-top: 20rpx;
- max-width: 800rpx;
-}
-
-.comment-input-btn {
- display: flex;
- flex-direction: row;
-}
-
-.comment-button {
- height: 72rpx;
- width: 200rpx;
- line-height: 72rpx;
- font-size: 26rpx;
- background-color: #f5f7f7;
- color: #4c4c4c;
- border-bottom-left-radius: 0 !important;
- border-top-left-radius: 0 !important;
- border-top-right-radius: 36rpx !important;
- border-bottom-right-radius: 36rpx !important;
- margin-left: 0;
-}
-
-.comment-button::after {
- border: none;
-}
-
-.replay-button {
- width: 160rpx;
- display: flex !important;
- flex-direction: column;
- justify-content: center;
- margin-right: 0rpx;
- text-align: center;
- padding: 0px !important;
- font-size: 12px;
- color: #959595;
- background-color: #eee;
- border-radius: 40rpx;
-}
-
-.replay-button::after {
- border: none;
-}
-
-.comment-input {
- background-color: #ebf0f4;
- padding: 0 3px 0 10px;
- font-size: 28rpx;
- height: 72rpx;
- width: 500rpx;
- text-align: left;
- border-bottom-left-radius: 36rpx;
- border-top-left-radius: 36rpx;
- border-top-right-radius: 0;
- border-bottom-right-radius: 0;
-}
-
-.bottom-btn {
- margin: auto 0;
- width: 85rpx;
- height: 85rpx;
- padding: 20rpx;
- box-sizing: border-box;
- position: relative;
-}
-
-.bottom-text {
- background: #ebf0f4;
- margin: auto 0 auto 10rpx;
- height: 70rpx;
- line-height: 70rpx;
- border-radius: 40rpx;
- width: 260rpx;
- color: #95989d;
- padding: 0 30rpx;
- font-size: 30rpx;
-}
-
-.textNoEmpty {
- color: red;
-}
-
 /* 评论用户头像 */
 .comment-user-gravatar {
   position: relative;
@@ -327,27 +131,3 @@
   border-radius: 50%;
   border: 1px solid #fff;
 }
-
-.more-comment {
- font-size: 30rpx;
- line-height: 1.8rem;
- margin-bottom: 50rpx;
- text-align: center;
- margin-top: 20rpx;
-}
-
-.img-plus {
- width: 60rpx !important;
- height: 60rpx !important;
- margin-left: 24rpx;
-}
-
-.img-plus2 {
- width: 60rpx !important;
- height: 60rpx !important;
- margin-left: 24rpx;
- display: flex;
- align-items: center;
-}
-
-/*  comment end  */

@@ -13,16 +13,21 @@
 <import src="../../templates/new_commentsList.wxml" />
 <import src="../../templates/copyright.wxml" />
 
-
-
-<view class="topic-common-list">
-  <view class="topic-list-item">
-    <image src="../../images/src/comments_bg.jpg" class="cover" mode="aspectFill"></image>
-    <view>点击可跳转至相关文章查看</view>
-  </view>
+<!-- 顶部说明 -->
+<view class="topic-list-item">
+  <image src="../../images/src/comments_bg.jpg" class="cover" mode="aspectFill"></image>
+  <view>点击可跳转至相关文章查看</view>
 </view>
 
+<!-- 评论列表 -->
+<template is="commentsList" data="{{commentsList}}" />
 
+<!-- 版权信息 -->
+<view class="copyright" style="display:{{floatDisplay}}">
+  <template is="tempCopyright" data="{{copyright}}" />
+</view>
+
+<!-- 无法显示网络 -->
 <view class="showerror" style="display:{{showerror}}">
   <image src="../../images/src/fail_nowifi.png" style="height:100rpx;width:100rpx"></image>
   <view class="errortext">
@@ -31,11 +36,4 @@
       <button class="more-button" onTap="reload" size="mini" onTap="reload">重新加载</button>
     </view>
   </view>
-</view>
-
-<template is="commentsList" data="{{commentsList}}" />
-
-
-<view class="copyright">
-  <template is="tempCopyright" />
 </view>

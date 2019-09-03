@@ -1,0 +1,31 @@
+<import src="../../templates/login-popup.wxml" />
+<view class="cateBox">
+  <view class="cateLeft">
+    <view class="cateLeftBox">
+      <view wx:for="{{categoriesList}}" class="{{(activeIndex === index) ? 'active' : '' }}" bindtap="switchCate" data-cate="{{item.name}}" data-index="{{index}}" wx:key="{{index}}">{{item.name}}</view>
+    </view>
+  </view>
+  <view class="cateRight">
+    <block wx:key="id" wx:for="{{cateSubList}}">
+      <view class="list-item">
+        <view>
+          <image src="{{item.category_thumbnail_image}}" class="cover" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex" mode="aspectFill"></image>
+        </view>
+        <view class="content-title" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex">
+          <view class="topic-name">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="topic-img">
+            <image src="../../images/src/{{item.subimg}}" data-subflag="{{item.subflag}}" data-id="{{item.id}}" catchtap="postsub" mode="aspectFill"></image>
+          </view>
+        </view>
+        <view class="content-brief" data-item="{{item.name}}" data-id="{{item.id}}">
+          <text>{{item.description}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 未登录时弹出的登录框 -->
+<template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>

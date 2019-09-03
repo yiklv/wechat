@@ -15,7 +15,6 @@ var util = require('../../utils/util.js');
 var WxParse = require('../../wxParse/wxParse.js');
 var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
-
 import config from '../../utils/config.js'
 const app = getApp();
 
@@ -47,7 +46,7 @@ Page({
         { id: '4', name: '鼓励数', selected: false }
     ],
     tab: '1',
-
+    copyright: app.globalData.copyright
   },
   formSubmit: function (e) {
     var url = '../list/list'

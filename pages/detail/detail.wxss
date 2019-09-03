@@ -44,10 +44,6 @@
   position: relative;
 }
 
-.entry-summary image {
-  width: 100% !important;
-}
-
 .detail-read-more {
   width: 100%;
   position: absolute;
@@ -73,6 +69,12 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.detail-btn-tip{
+  padding-top: 10rpx;
+  font-size: 24rpx;
+  color: #fd8f45;
 }
 
 .detail-readmore-btn::after {
@@ -287,139 +289,6 @@
 
 /*  comment end  */
 
-.relatedPost {
-  position: relative;
-  text-align: left;
-  margin: 20rpx 0;
-}
-
-.subTitle {
-  margin: 40rpx 0 20rpx;
-  font-size: 30rpx;
-  line-height: 1.4;
-  font-weight: 500;
-  color: #4c4c4c;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-}
-
-.subTitle_line {
-  width: 100%;
-  height: 1rpx;
-  background-color: #e6e6e6;
-  margin-bottom: 32rpx;
-  position: relative;
-  overflow: visible;
-}
-
-.subTitle_line::before {
-  content: "";
-  display: block;
-  width: 54rpx;
-  height: 4rpx;
-  background: #959595;
-  position: absolute;
-  left: 0;
-  top: -2rpx;
-}
-
-.subTitle_line_comment {
-  margin-bottom: 40rpx;
-}
-
-.relatedText {
-  text-align: left;
-  font-weight: normal;
-  font-size: 28rpx;
-  line-height: 60rpx;
-  color: #4c4c4c !important;
-}
-
-.likePost {
-  position: relative;
-  text-align: left;
-  margin: 20rpx 0;
-}
-
-.likeTitle {
-  text-align: left;
-  font-weight: normal;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-  font-size: 28rpx;
-  color: #959595 !important;
-  vertical-align: middle;
-  position: absolute;
-  top: 60rpx;
-  left: 0;
-}
-
-.bottom_like {
-  width: 32rpx;
-  height: 32rpx;
-  display: block;
-  text-align: center;
-  margin-right: 16rpx;
-  margin-top: 22rpx;
-}
-
-.likeTitle-img {
-  position: absolute;
-  top: 60rpx;
-  left: 160rpx;
-}
-
-.likeText {
-  text-align: left;
-  font-weight: normal;
-  font-size: 26rpx;
-  line-height: 30rpx;
-  color: #0000fe !important;
-  margin: 120rpx 0 0;
-}
-
-.relatedNavigator {
-  color: #21759b !important;
-}
-
-.sharedetail {
-  position: relative;
-  text-align: center;
-  margin-top: 30rpx;
-}
-
-.share-button {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-}
-
-.share-title {
-  color: #333;
-  font-size: 30rpx;
-  padding-top: 20rpx;
-}
-
-.copy-button {
-  color: #296fd0 !important;
-}
-
-.showMessage {
-  text-align: center;
-  font-weight: normal;
-  font-size: 26rpx;
-  line-height: 40rpx;
-  color: sandybrown;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-}
-
 .ditail-copyright {
   font-size: 26rpx;
   line-height: 1.2;
@@ -443,35 +312,7 @@
   font-family: Source Code Pro, Consolas, Menlo, Monaco, Courier New, monospace !important;
 }
 
-/* 上一篇下一篇 */
-
-.pagination {
-  font-weight: normal;
-  font-size: 28rpx;
-  line-height: 1.8;
-  color: #4c4c4c;
-  margin: 40rpx 0 0;
-}
-
-.nav-previous {
-  float: left;
-  width: 90%;
-}
-
-.nav-next {
-  float: left;
-  text-align: left;
-  width: 90%;
-}
-
-.canvas-box {
-  position: fixed;
-  top: 999999rpx;
-  left: 0;
-}
-
 /* 点个赞 */
-
 .likeBox {
   margin: 80rpx 0;
 }
@@ -575,7 +416,6 @@
 }
 
 /* 文章底部的阅读原文和赞赏 */
-
 .post_bottom_box {
   display: flex;
   justify-content: space-between;
@@ -596,8 +436,121 @@
   margin-left: 12rpx;
 }
 
-/* 底部Tab栏 */
+/* 上一篇下一篇 */
+.pre-next-post {
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #fff;
+  margin: 40rpx 0 0;
+}
 
+.pre-next-post image {
+  width: 100%;
+  height: 180rpx;
+  filter: brightness(80%);
+  background: #f5f7f7;
+}
+
+.pre-post, .next-post {
+  width: 100%;
+  height: 180rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.next-post {
+  margin-top: 12rpx;
+}
+
+.pre-post-title, .next-post-title {
+  width: 610rpx;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  margin: 0 30rpx;
+}
+
+.pre-post-title>text, .next-post-title>text {
+  font-weight: 200;
+  font-size: 26rpx;
+  line-height: 1;
+}
+
+.next-post-title {
+  text-align: right;
+}
+
+/* 猜你喜欢、评论标题下的横线 */
+.subTitle {
+  margin: 40rpx 0 20rpx;
+  font-size: 30rpx;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #4c4c4c;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subTitle_line {
+  width: 100%;
+  height: 1rpx;
+  background-color: #e6e6e6;
+  margin-bottom: 32rpx;
+  position: relative;
+  overflow: visible;
+}
+
+.subTitle_line::before {
+  content: "";
+  display: block;
+  width: 54rpx;
+  height: 4rpx;
+  background: #959595;
+  position: absolute;
+  left: 0;
+  top: -2rpx;
+}
+
+.subTitle_line_comment {
+  margin-bottom: 40rpx;
+}
+
+/* 猜你喜欢 */
+.relatedPost {
+  margin: 20rpx 0;
+}
+
+.relatedText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.relatedText>view {
+  flex: 1;
+  font-size: 28rpx;
+  line-height: 1.8;
+  color: #4c4c4c;
+  margin-right: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.relatedText image {
+  width: 200rpx;
+  height: 120rpx;
+  display: block;
+}
+
+
+/* 底部Tab栏 */
 .comment-fixed {
   position: fixed;
   bottom: 0;
@@ -666,7 +619,6 @@
 }
 
 /* tab栏分享图标 */
-
 .comment_share_btn {
   width: 36rpx;
   height: 36rpx;
@@ -682,6 +634,37 @@
 .comment_icon_share {
   width: 36rpx;
   height: 36rpx;
+}
+
+/* 当在后台关闭评论功能时，显示出单独的分享按钮 */
+.bottom_share_btn {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  line-height: 98rpx;
+  background-color: #fff;
+  box-shadow: 2px 4px 8px #ccc;
+  z-index: 3;
+}
+
+.bottom_share_btn::after {
+  border: none;
+}
+
+.bottom_share_btn image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+/* 如果是iPhoneX，底部Tab栏增加高度 */
+.iphoneX {
+  height: 40rpx;
+  width: 100%;
 }
 
 /* 分享弹出层 */
@@ -720,15 +703,4 @@
 
 .shareBtn::after {
   border: none;
-}
-.detail-btn-tip{
-  padding-top: 10rpx;
-  font-size: 24rpx;
-  color: #fd8f45;
-}
-
-.navigator_text{
-overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }

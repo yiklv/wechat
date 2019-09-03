@@ -6,6 +6,7 @@
         <block wx:if="{{index != 0 && index % item.bannerShowIndex ==0}}">
         <ad unit-id="{{item.bannerId}}"></ad>
         </block>
+
       <!-- 一张大图列表（序号index除以10余数是5时为大图模式）-->
       <view wx:if="{{index%10==5}}">
         <view class="list-item1 has-img" index="{{index}}" id="{{item.id}}" data-posttype="{{item.postType}}" bindtap="redictDetail">
@@ -25,12 +26,9 @@
           </view>
 
         </view>
-
       </view>
 
       <view wx:else>
-
-
         <view class="list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
 
           <!-- 三张图片列表 -->
@@ -74,7 +72,7 @@
                 </view>
               </view>
             </view>
-            <view class="content-cover" wx:if="{{item.post_medium_image != '../../images/src/post_default_img.jpg'}}">
+            <view class="content-cover">
               <image src="{{item.post_medium_image}}" mode="aspectFill" class="cover"></image>
             </view>
           </view>

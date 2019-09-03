@@ -17,6 +17,7 @@ var WxParse = require('../../wxParse/wxParse.js');
 var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js');
 var app = getApp();
+
 Page({
 
   data: {
@@ -26,7 +27,7 @@ Page({
       { id: '1', name: '浏览', selected: true },
       { id: '2', name: '评论', selected: false },
       { id: '3', name: '点赞', selected: false },
-     // { id: '4', name: '鼓励', selected: false },
+      // { id: '4', name: '鼓励', selected: false },
       { id: '5', name: '订阅', selected: false }
       // { id: '6', name: '言论', selected: false }
     ],
@@ -39,6 +40,7 @@ Page({
     openid: '',
     isLoginPopup: false,
     navigationBarTitle: '',
+    copyright: app.globalData.copyright
   },
 
   /**
@@ -78,12 +80,12 @@ Page({
   onReady: function () {
     var self = this;
     Auth.checkSession(self, 'isLoginNow');
-      // 动态设置页面标题
+    // 动态设置页面标题
     wx.setNavigationBarTitle({
-        title: this.data.navigationBarTitle,
-        success: function (res) {
-              // success
-        }
+      title: this.data.navigationBarTitle,
+      success: function (res) {
+        // success
+      }
     })
   },
   agreeGetUser: function (e) {
@@ -214,12 +216,12 @@ Page({
     });
     var count = 0;
     var openid = "";
-    var args={};
-    args.apptype="wx";
+    var args = {};
+    args.apptype = "wx";
     if (tab != '1') {
       if (self.data.openid) {
         var openid = self.data.openid;
-        args.openid=openid;    
+        args.openid = openid;
       }
       else {
         Auth.checkSession(self, 'isLoginNow');

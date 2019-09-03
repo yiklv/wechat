@@ -12,10 +12,12 @@
 var DOMAIN = "woaizikao.cn";
 var MINAPPTYPE = "0";//小程序的类型，如果是企业小程序请填：0 ，如果是个人小程序请填：1
 var WEBSITENAME = "大自考"; //网站名称
-//小程序“关于”页面的id,此id是wordpress网站"页面"的id,注意这个是wordpress的"页面",不是"文章"
+//小程序个人中心“关于我们”页面的id和首页新手指南的页面id，此id是wordpress网站"页面"的id，注意这个是wordpress的"页面"，不是"文章"
 var ABOUTID = 9;
+var GUIDEID = 202;
 var PAGECOUNT = '10'; //每页文章数,设置成几,首页每次上拉加载的就是几篇文章
-var DETAILSUMMARYHEIGHT = '300px'; // 设置文章详情页内容展示高度（注意单位一定要用px，如 '1000px';），默认值为空 '' 则全文显示
+var DETAILSUMMARYHEIGHT = '600px'; // 设置文章详情页内容展示高度（注意单位一定要用px，如 '1000px';），默认值为空 '' 则全文显示
+
 
 var PAYTEMPPLATEID = '7vnD3IlrrhEClRJktcwkxvJSWhj_nyRbnZGoUQKD0lc';//鼓励消息模版id
 var REPLAYTEMPPLATEID = 'LywysjZ6FAJ7TVPCGlHMdaMyrleLXZwfXupqH4B1YJc';//回复评论消息模版id
@@ -24,7 +26,7 @@ var LOGO = "https://woaizikao.cn/logo.jpg"; // 网站的logo图片
 //设置downloadFile合法域名,不带https ,在中括号 [] 里增加域名，格式：{id=**,domain:'www.**.com'}，用英文逗号分隔，此处设置的域名和小程序与小程序后台设置的downloadFile合法域名要一致。
 var DOWNLOADFILEDOMAIN = [
   { id: 1, domain: 'woaizikao.cn' },
-  { id: 2, domain: 'woaizikao.cn' }
+  { id: 2, domain: 'ax.qlogo.cn' }
 ];
 
 
@@ -37,13 +39,12 @@ extraData ：当redirecttype为miniapp时，这个值为提交到其他微信小
 
 redirecttype 为跳转的类型：
    ① webpage 为跳转你的业务域名的网页，是通过web-view打开网址，url就是你要打开的网址
-   ② miniapp 为跳转其他微信小程序，url 为其他小程序的页面路径
+   ② miniapp 为跳转其他微信小程序，url 为其他小程序的页面路径，同时要在app.json文件的navigateToMiniProgramAppIdList里面声明需要跳转的小程序 appId
    ③ apppage 为跳转本小程序内的页面，url 为本小程序的页面路径：
-      A.如果直接跳转小程序内页面 ../../pages/list/list
+      A.如果直接跳转小程序内页面 ../../pages/comments/comments
       B.如果要跳转到某个分类页 ../../pages/list/list?categoryID=1（这里填你自己的分类id）
 */
 var INDEXNAV = [
-  
   {
     id: '1',
     name: '最新',
@@ -73,8 +74,35 @@ var INDEXNAV = [
   },
   {
     id: '4',
-    name: '其他',
+    name: '校园',
     image: '../../images/src/index_nav4.jpg',
+    url: '../../pages/list/list?categoryID=10',
+    redirecttype: 'apppage',
+    appid: '',
+    extraData: ''
+  },
+  {
+    id: '5',
+    name: '题库',
+    image: '../../images/src/index_nav5.jpg',
+    url: '../../pages/list/list?categoryID=9',
+    redirecttype: 'apppage',
+    appid: '',
+    extraData: ''
+  },
+  {
+    id: '6',
+    name: '院校',
+    image: '../../images/src/index_nav6.jpg',
+    url: '../../pages/list/list?categoryID=8',
+    redirecttype: 'apppage',
+    appid: '',
+    extraData: ''
+  },
+  {
+    id: '7',
+    name: '其他',
+    image: '../../images/src/index_nav7.jpg',
     url: '../../pages/list/list?categoryID=7',
     redirecttype: 'apppage',
     appid: '',
@@ -84,11 +112,14 @@ var INDEXNAV = [
 
 // 小程序广告banner 的 广告位ID
 var BANNERADID = [
-    'adunit-0315fcba8d0eda46', 'adunit-47c9506bb07506b2','adunit-c91da6f0c9c0943a'
+  'adunit-0315fcba8d0eda46', 'adunit-47c9506bb07506b2', 'adunit-c91da6f0c9c0943a'
 ];
 // 小程序广告banner 的显示位置
-var BANNERADINDEX = 6;
-
+var BANNERADINDEX = 3;
+// 激励式视频 ID
+var REWARDEDVIDEOADID= [
+    'adunit-9aef243a84b3b0c3'
+];
 
 // 下面这些设置不用动
 var CATEGORIESID;
@@ -97,6 +128,7 @@ export default {
   getDomain: DOMAIN,
   getWebsiteName: WEBSITENAME,
   getAboutId: ABOUTID,
+  getGuideId: GUIDEID,
   getPayTemplateId: PAYTEMPPLATEID,
   getPageCount: PAGECOUNT,
   getCategoriesID: CATEGORIESID,
@@ -108,6 +140,7 @@ export default {
   getLogo: LOGO,
   getDownloadFileDomain: DOWNLOADFILEDOMAIN,
   detailSummaryHeight: DETAILSUMMARYHEIGHT,
-  getBANNERADID:BANNERADID,
+  getBANNERADID: BANNERADID,
   getBANNERADINDEX: BANNERADINDEX,
+  getREWARDEDVIDEOADID: REWARDEDVIDEOADID,
 }

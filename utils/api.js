@@ -81,12 +81,15 @@ module.exports = {
     return url;
 
   },
+  getTime: function () {
+    var url = HOST_URI_MINAPPER_PLUS_JSON + 'options/getendtime'
+    return url
+    },
+
   // 获取特定slug的文章内容
   getPostBySlug: function (obj) {
       var url = HOST_URI + 'posts?slug=' + obj;
-
       return url;
-
   },
   // 获取内容页数据
   getPostByID: function (id) {

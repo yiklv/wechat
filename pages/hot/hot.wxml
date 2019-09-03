@@ -12,25 +12,16 @@
  */-->
 <import src="../../templates/common-list.wxml" />
 <import src="../../templates/copyright.wxml" />
-<ad unit-id="adunit-0315fcba8d0eda46"></ad>
 
+<!-- 顶部Tab选项 -->
 <view class="top-bar">
   <block wx:for="{{topBarItems}}" wx:key="id">
     <view class="top-bar-item {{item.selected ? 'top-bar-item-Selected': '' }}" catchtap="onTapTag" id="{{item.id}}">{{item.name}}</view>
   </block>
 </view>
+<ad unit-id="adunit-47c9506bb07506b2"></ad>
+<!-- 文章列表 -->
 <view class="container">
-  <view class="showerror" style="display:{{showerror}}">
-    <image src="../../images/src/fail_nowifi.png" style="height:100rpx;width:100rpx"></image>
-
-    <view class="errortext">
-      暂时无法访问网络
-      <view class="">
-        <button class="more-button" bindtap="reload" size="mini" bindtap="reload">重新加载</button>
-      </view>
-    </view>
-  </view>
-
   <view style="display:{{showallDisplay}}">
     <view class="post-list">
       <block wx:key="id" wx:for="{{postsList}}">
@@ -41,13 +32,8 @@
               <text>{{item.post_title}}</text>
             </view>
             <view class="list-content-des">
-              <!-- <image src="../../images/src/calendar.png"></image> -->
-              <!-- <text>{{item.post_date}}</text> -->
-              <!-- <image src="../../images/src/pageviews.png"></image> -->
               <text class="">浏览 {{item.pageviews}}</text>
-              <!-- <image src="../../images/src/comments.png"></image> -->
               <text class="">评论 {{item.comment_total}}</text>
-              <!-- <image src="../../images/src/home-like.png"></image> -->
               <text class="">赞 {{item.like_count}}</text>
             </view>
           </view>
@@ -59,10 +45,20 @@
         </view>
       </block>
     </view>
-
   </view>
-
+  <!-- 版权信息 -->
   <view class="copyright" style="display:{{floatDisplay}}">
-    <template is="tempCopyright" />
+    <template is="tempCopyright" data="{{copyright}}" />
+  </view>
+</view>
+
+<!-- 没有网络 -->
+<view class="showerror" style="display:{{showerror}}">
+  <image src="../../images/src/fail_nowifi.png" style="height:100rpx;width:100rpx"></image>
+  <view class="errortext">
+    暂时无法访问网络
+    <view class="">
+      <button class="more-button" bindtap="reload" size="mini" bindtap="reload">重新加载</button>
+    </view>
   </view>
 </view>

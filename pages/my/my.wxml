@@ -91,13 +91,11 @@
 
     <!-- 退出登录/清除缓存 -->
     <view catchtap="exit" id="6" class="listItem">
-      <block wx:if="{{ isWeb != true }}">
-        <block wx:if="{{openid !=''}}">
-          <view>退出登录</view>
-        </block>
-        <block wx:else>
-          <view>清除缓存</view>
-        </block>
+      <block wx:if="{{openid !=''}}">
+        <view>退出登录</view>
+      </block>
+      <block wx:else>
+        <view>清除缓存</view>
       </block>
     </view>
   </view>

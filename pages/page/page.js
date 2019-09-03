@@ -25,8 +25,11 @@ Page({
     wxParseData: []
   },
   onLoad: function (options) {
-    this.fetchData(options.id),
-      this.fetchPagesData()
+    this.fetchData(config.getGuideId);
+    this.fetchPagesData();
+    wx.setNavigationBarTitle({
+      title: '新手指南',
+    })
   },
   fetchData: function (id) {
     var self = this;
